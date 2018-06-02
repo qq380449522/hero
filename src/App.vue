@@ -4,7 +4,9 @@
     <div class="container-fluid">
     <div class="row">
       <mynav></mynav>
-      <myList></myList>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <router-view></router-view>
+      </div>
     </div>
     </div>
   </div>
@@ -12,13 +14,11 @@
 <script>
 import myheader from '@/components/myHeader.vue'
 import mynav from '@/components/myNav.vue'
-import myList from '@/components/myList.vue'
 export default {
   name: 'App',
   components: {
     myheader,
-    mynav,
-    myList
+    mynav
   }
 }
 </script>
