@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   data() {
     return {
@@ -33,7 +32,7 @@ export default {
   },
   methods: {
     loadData() {
-      axios.get(`http://localhost:3000/heroes/${this.id}`)
+      this.$http.get(`/heroes/${this.id}`)
         .then(res => {
           if (res.status === 200) {
             this.formData = res.data
@@ -44,7 +43,7 @@ export default {
         })
     },
     handleEdit() {
-      axios.patch(`http://localhost:3000/heroes/${this.id}`, this.formData)
+      this.$http.patch(`/heroes/${this.id}`, this.formData)
         .then(res => {
           if (res.status === 200) {
             this.$router.push({

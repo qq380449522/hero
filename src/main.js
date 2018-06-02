@@ -5,7 +5,10 @@ import App from './App'
 import router from './router'
 import 'bootstrap/dist/css/bootstrap.css'
 import '@/assets/css/index.css'
+// 引入axios
+import myAxios from '@/plugins/myAxios'
 
+Vue.use(myAxios)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
